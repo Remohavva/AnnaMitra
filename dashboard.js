@@ -117,3 +117,15 @@ document.getElementById('clearHistory').addEventListener('click', ()=>{
 renderResources();
 renderHistory();
 
+// Seed button (dashboard)
+document.addEventListener('DOMContentLoaded', ()=>{
+  const btn = document.getElementById('seedBtn');
+  if(btn && window.Seed){
+    btn.addEventListener('click', ()=>{
+      window.Seed.seedDemoData({ historyCount: 30, resourceCount: 8 });
+      renderResources();
+      renderHistory();
+    });
+  }
+});
+
