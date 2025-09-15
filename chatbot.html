@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TerraNova — Advisory Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img class="logo-img" src="logo.svg" alt="TerraNova" />
+      <div>
+        <div class="title">TerraNova</div>
+        <div class="kicker">Advisory Chat</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" class="btn" data-i18n="nav.home">Home</a>
+      <a href="dashboard.html" class="btn" data-i18n="nav.dashboard">Dashboard</a>
+      <select id="langSelect" class="btn" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+      <label class="theme-toggle">
+        <input type="checkbox" id="themeToggle" aria-label="Toggle light/dark theme" />
+        <span class="slider"></span>
+      </label>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="card" style="margin-top:20px">
+      <div id="chat" class="chat"></div>
+      <form id="chatForm" class="chat-input" autocomplete="off">
+        <input id="chatText" placeholder="Type your message…" />
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      <div data-i18n="footer.tagline">Built for smallholder farmers • Open to research partners</div>
+      <div style="margin-top:8px">© <span id="year"></span> TerraNova</div>
+    </footer>
+  </div>
+
+  <script src="seed.js"></script>
+  <script src="i18n.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
+
