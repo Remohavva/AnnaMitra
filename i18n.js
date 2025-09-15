@@ -16,6 +16,17 @@ const I18N_DICTIONARIES = {
     dash: {
       clear: 'Clear History', addResource: 'Add Resource', resources: 'Your Resources', history: 'Past Predictions', subtitle: 'Latest 100 runs stored on this device.',
       tbl: { crop:'Crop', location:'Location', area:'Area', estimate:'Estimate', confidence:'Confidence', when:'When', resource:'Resource', quantity:'Quantity' }
+    },
+    details: { title: 'Details', desc: 'TerraNova brings together weather, satellite and historical data to guide sowing, irrigation, fertilizer and pest control decisions with clear, farmer-friendly steps.' },
+    insights: { title: 'Historical Insights', subtitle: 'Based on your recent runs on this device.', avg: 'Average Estimate', best: 'Highest Estimate', count: 'Predictions Count' },
+    featuresX: {
+      title: 'Features Offered',
+      localWeather: { title:'Local weather-aware', desc:'Advisory adapts to your village’s forecast and rainfall patterns.' },
+      soil: { title:'Soil & stage guidance', desc:'Actions tailored for crop stage with simple soil health tips.' },
+      alerts: { title:'Pest and disease alerts', desc:'Early warnings from satellite and community signals.' },
+      offline: { title:'Offline-first', desc:'Save advisories and view without continuous internet.' },
+      translations: { title:'Multilingual support', desc:'Switch languages instantly in the header.' },
+      dashboard: { title:'Resource dashboard', desc:'Track inputs and view all past predictions.' }
     }
   },
   hi: {
@@ -34,6 +45,17 @@ const I18N_DICTIONARIES = {
     dash: {
       clear: 'इतिहास साफ़ करें', addResource: 'संसाधन जोड़ें', resources: 'आपके संसाधन', history: 'पिछले पूर्वानुमान', subtitle: 'नवीनतम 100 रन इस डिवाइस पर संग्रहीत हैं।',
       tbl: { crop:'फसल', location:'स्थान', area:'क्षेत्र', estimate:'अनुमान', confidence:'भरोसा', when:'कब', resource:'संसाधन', quantity:'मात्रा' }
+    },
+    details: { title: 'विवरण', desc: 'TerraNova मौसम, उपग्रह और ऐतिहासिक डेटा को जोड़कर बुवाई, सिंचाई, खाद और कीट नियंत्रण के निर्णयों के लिए स्पष्ट, किसान-अनुकूल कदम सुझाता है।' },
+    insights: { title: 'ऐतिहासिक जानकारियाँ', subtitle: 'इस डिवाइस पर आपके हाल के रन के आधार पर।', avg: 'औसत अनुमान', best: 'उच्चतम अनुमान', count: 'पूर्वानुमान संख्या' },
+    featuresX: {
+      title: 'प्रस्तुत सुविधाएँ',
+      localWeather: { title:'स्थानीय मौसम-सचेत', desc:'सलाह आपके गाँव के पूर्वानुमान और वर्षा के अनुसार बदलती है।' },
+      soil: { title:'मृदा और चरण मार्गदर्शन', desc:'फसल चरण के अनुसार क्रियाएँ और सरल मृदा स्वास्थ्य सुझाव।' },
+      alerts: { title:'कीट और रोग अलर्ट', desc:'उपग्रह और सामुदायिक संकेतों से समय पर चेतावनी।' },
+      offline: { title:'ऑफ़लाइन-पहले', desc:'सलाह सहेजें और बिना निरंतर इंटरनेट के देखें।' },
+      translations: { title:'बहुभाषी समर्थन', desc:'हेडर से तुरंत भाषा बदलें।' },
+      dashboard: { title:'संसाधन डैशबोर्ड', desc:'इनपुट ट्रैक करें और सभी पूर्वानुमान देखें।' }
     }
   }
 };

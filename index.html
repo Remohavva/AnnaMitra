@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="seed.js"></script>
 </head>
 <body>
   <header>
@@ -74,12 +75,70 @@
           <button class="btn primary" id="demoBtn" data-i18n="hero.demo">Try Demo</button>
         </div>
       </div>
+    </section>
 
-      
+    <section class="card" style="margin-top:20px" id="details">
+      <h3 style="margin:0 0 8px" data-i18n="details.title">Details</h3>
+      <p class="muted" data-i18n="details.desc">TerraNova brings together weather, satellite and historical data to guide sowing, irrigation, fertilizer and pest control decisions with clear, farmer-friendly steps.</p>
+    </section>
 
-    
-    
+    <section class="card" style="margin-top:20px" id="insights">
+      <h3 style="margin:0 0 8px" data-i18n="insights.title">Historical Insights</h3>
+      <p class="muted" data-i18n="insights.subtitle">Based on your recent runs on this device.</p>
+      <div class="chart-wrap">
+        <canvas id="historyChart" height="160"></canvas>
+      </div>
+      <div class="insight-stats">
+        <div class="stat-card"><div class="label" data-i18n="insights.avg">Average Estimate</div><div class="value" id="avgEst">-</div></div>
+        <div class="stat-card"><div class="label" data-i18n="insights.best">Highest Estimate</div><div class="value" id="maxEst">-</div></div>
+        <div class="stat-card"><div class="label" data-i18n="insights.count">Predictions Count</div><div class="value" id="runCount">0</div></div>
+      </div>
+      <div style="margin-top:10px">
+        <button class="btn" id="seedBtn">Load Demo Data</button>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:20px" id="features-extended">
+      <h3 style="margin:0 0 8px" data-i18n="featuresX.title">Features Offered</h3>
+      <div class="features extended">
+        <div class="feature">
+          <h3 data-i18n="featuresX.localWeather.title">Local weather-aware</h3>
+          <p class="muted" data-i18n="featuresX.localWeather.desc">Advisory adapts to your village’s forecast and rainfall patterns.</p>
+        </div>
+        <div class="feature">
+          <h3 data-i18n="featuresX.soil.title">Soil & stage guidance</h3>
+          <p class="muted" data-i18n="featuresX.soil.desc">Actions tailored for crop stage with simple soil health tips.</p>
+        </div>
+        <div class="feature">
+          <h3 data-i18n="featuresX.alerts.title">Pest and disease alerts</h3>
+          <p class="muted" data-i18n="featuresX.alerts.desc">Early warnings from satellite and community signals.</p>
+        </div>
+        <div class="feature">
+          <h3 data-i18n="featuresX.offline.title">Offline-first</h3>
+          <p class="muted" data-i18n="featuresX.offline.desc">Save advisories and view without continuous internet.</p>
+        </div>
+        <div class="feature">
+          <h3 data-i18n="featuresX.translations.title">Multilingual support</h3>
+          <p class="muted" data-i18n="featuresX.translations.desc">Switch languages instantly in the header.</p>
+        </div>
+        <div class="feature">
+          <h3 data-i18n="featuresX.dashboard.title">Resource dashboard</h3>
+          <p class="muted" data-i18n="featuresX.dashboard.desc">Track inputs and view all past predictions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:20px" id="contact">
+      <h3 style="margin:0 0 8px" data-i18n="contact.title">Contact Us</h3>
+      <p class="muted" data-i18n="contact.desc">For partnerships, feedback or support — reach out at <a href="mailto:info@terranova.org">info@terranova.org</a></p>
+    </section>
+
+    <footer>
+      <div data-i18n="footer.tagline">Built for smallholder farmers • Open to research partners</div>
+      <div style="margin-top:8px">© <span id="year"></span> TerraNova</div>
+    </footer>
   </div>
+  <script src="seed.js"></script>
   <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>

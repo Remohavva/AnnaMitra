@@ -85,3 +85,75 @@ resetBtn.addEventListener('click', ()=>{
 });
 
 window.addEventListener('keydown',(e)=>{ if(e.key==='c') demoBtn.click(); });
+
+// Insights chart
+function parseEstimate(est){
+  if(!est) return NaN;
+  const num = parseFloat(String(est).replace(/[^0-9.]/g,''));
+  return isNaN(num) ? NaN : num;
+}
+
+function renderInsights(){
+  const canvas = document.getElementById('historyChart');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const history = (function(){ try{ return JSON.parse(localStorage.getItem('am_history')||'[]'); }catch(e){return []} })();
+  const last = history.slice(0,20).reverse();
+  const values = last.map(h=>parseEstimate(h.estimate)).filter(v=>!isNaN(v));
+  const labels = last.map((_,i)=>i+1);
+
+  // Stats
+  const avg = values.length? (values.reduce((a,b)=>a+b,0)/values.length).toFixed(2) : '-';
+  const max = values.length? Math.max(...values).toFixed(2) : '-';
+  const count = history.length;
+  const avgEl = document.getElementById('avgEst'); if(avgEl) avgEl.textContent = typeof avg==='string'?avg:(avg+'');
+  const maxEl = document.getElementById('maxEst'); if(maxEl) maxEl.textContent = typeof max==='string'?max:(max+'');
+  const cntEl = document.getElementById('runCount'); if(cntEl) cntEl.textContent = String(count);
+
+  // Clear
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  // Draw axes
+  const w = canvas.width; const h = canvas.height; const pad = 24;
+  ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+  if(document.documentElement.getAttribute('data-theme')==='light') ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(pad, h-pad); ctx.lineTo(w-pad, h-pad); ctx.moveTo(pad, h-pad); ctx.lineTo(pad, pad); ctx.stroke();
+
+  if(values.length<2) return;
+  const minV = Math.min(...values);
+  const maxV = Math.max(...values);
+  const span = (maxV-minV) || 1;
+  const xStep = (w - pad*2) / (values.length-1);
+
+  // Line
+  ctx.beginPath();
+  ctx.strokeStyle = '#22c55e';
+  ctx.lineWidth = 2;
+  values.forEach((v, i)=>{
+    const x = pad + i*xStep;
+    const y = h - pad - ((v - minV) / span) * (h - pad*2);
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  });
+  ctx.stroke();
+
+  // Points
+  ctx.fillStyle = '#16a34a';
+  values.forEach((v, i)=>{
+    const x = pad + i*xStep;
+    const y = h - pad - ((v - minV) / span) * (h - pad*2);
+    ctx.beginPath(); ctx.arc(x,y,2.5,0,Math.PI*2); ctx.fill();
+  });
+}
+
+window.addEventListener('load', renderInsights);
+
+// Seed button (home)
+document.addEventListener('DOMContentLoaded', ()=>{
+  const btn = document.getElementById('seedBtn');
+  if(btn && window.Seed){
+    btn.addEventListener('click', ()=>{
+      window.Seed.seedDemoData({ historyCount: 30, resourceCount: 8 });
+      renderInsights();
+    });
+  }
+});
