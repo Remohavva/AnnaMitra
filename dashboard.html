@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Farmer Dashboard — TerraNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">TN</div>
+      <div>
+        <div class="title">Farmer Dashboard</div>
+        <div class="kicker">Track resources and view past predictions</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" class="btn" data-i18n="nav.home">Home</a>
+      <button id="clearHistory" class="btn" data-i18n="dash.clear">Clear History</button>
+      <a href="#addResource" class="btn" data-i18n="dash.addResource">Add Resource</a>
+      <select id="langSelect" class="btn" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+      <label class="theme-toggle">
+        <input type="checkbox" id="themeToggle" aria-label="Toggle light/dark theme" />
+        <span class="slider"></span>
+      </label>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="card" style="margin-top:20px">
+      <h3 style="margin:0 0 8px" data-i18n="dash.resources">Your Resources</h3>
+      <div id="resourceChips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+      <form id="resourceForm" class="card" style="margin-top:14px" aria-label="Add resource" autocomplete="off">
+        <div class="form-group">
+          <input id="resName" placeholder="Resource name (e.g., Urea, Seeds, Water)" required />
+          <input id="resQty" placeholder="Quantity" required />
+          <button class="btn primary" type="submit">Add</button>
+        </div>
+      </form>
+      <div style="overflow:auto">
+        <table class="table" id="resourceTable" style="width:100%;margin-top:10px"></table>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:20px">
+      <h3 style="margin:0 0 8px" data-i18n="dash.history">Past Predictions</h3>
+      <div class="muted" data-i18n="dash.subtitle">Latest 100 runs stored on this device.</div>
+      <div style="overflow:auto">
+        <table class="table" id="historyTable" style="width:100%;margin-top:10px"></table>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> TerraNova</div>
+    </footer>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
+

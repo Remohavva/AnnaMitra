@@ -1,448 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnnaMitra - AI-Powered Crop Yield Prediction & Advisory</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TerraNova — AI-Powered Crop Yield Prediction & Advisory</title>
+  <meta name="description" content="TerraNova uses AI to help farmers predict crop yields and get actionable advisory — weather-aware, simple UI, and farmer-friendly advice.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="logo-icon">
-                    <i class="fas fa-seedling"></i>
-                </div>
-                <div class="logo-text">
-                    <span class="logo-name">AnnaMitra</span>
-                    <span class="logo-tagline">अन्नमित्र</span>
-                </div>
-            </div>
-            <div class="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#how-it-works" class="nav-link">How it Works</a>
-                <a href="#benefits" class="nav-link">Benefits</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <div class="language-selector">
-                    <select id="languageSelect" onchange="changeLanguage()">
-                        <option value="en">English</option>
-                        <option value="hi">हिन्दी</option>
-                        <option value="or">ଓଡ଼ିଆ</option>
-                    </select>
-                </div>
-            </div>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
-
-    
-    <section id="home" class="hero animated-bg">
-        <div class="hero-background">
-            <div class="floating-elements">
-                <div class="floating-icon icon-1 animated-float"><i class="fas fa-seedling"></i></div>
-                <div class="floating-icon icon-2 animated-float"><i class="fas fa-cloud-sun"></i></div>
-                <div class="floating-icon icon-3 animated-float"><i class="fas fa-satellite"></i></div>
-                <div class="floating-icon icon-4 animated-float"><i class="fas fa-chart-line"></i></div>
-            </div>
-        </div>
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge animated-badge">
-                    <i class="fas fa-brain"></i>
-                    <span data-en="AI-Powered Agriculture" data-hi="AI-संचालित कृषि" data-or="AI-ଚାଳିତ କୃଷି">AI-Powered Agriculture</span>
-                </div>
-                <h1 class="hero-title animated-title">
-                    <span data-en="AnnaMitra" data-hi="अन्नमित्र" data-or="ଅନ୍ନମିତ୍ର">AnnaMitra</span>
-                    <br>
-                    <span class="gradient-text" data-en="AI-powered Crop Yield Prediction & Advisory" data-hi="AI-संचालित फसल उत्पादन भविष्यवाणी और सलाह" data-or="AI-ଚାଳିତ ଫସଲ ଉତ୍ପାଦନ ଭବିଷ୍ୟତବାଣୀ ଏବଂ ପରାମର୍ଶ">AI-powered Crop Yield Prediction & Advisory</span>
-                </h1>
-                <p class="hero-description animated-desc" data-en="Our platform uses artificial intelligence to forecast crop yields and provide optimization recommendations. It helps farmers make better decisions and supports government officials in agricultural planning." data-hi="हमारा प्लेटफॉर्म कृत्रिम बुद्धिमत्ता का उपयोग करके फसल उत्पादन का पूर्वानुमान लगाता है और अनुकूलन सुझाव प्रदान करता है। यह किसानों को बेहतर निर्णय लेने में मदद करता है और सरकारी अधिकारियों को कृषि योजना में सहायता करता है।" data-or="ଆମର ପ୍ଲାଟଫର୍ମ କୃତ୍ରିମ ବୁଦ୍ଧିମତ୍ତା ବ୍ୟବହାର କରି ଫସଲ ଉତ୍ପାଦନର ଭବିଷ୍ୟତବାଣୀ କରେ ଏବଂ ଅନୁକୂଳନ ସୁପାରିଶ ପ୍ରଦାନ କରେ। ଏହା କୃଷକମାନଙ୍କୁ ଉନ୍ନତ ନିର୍ଣ୍ଣୟ ନେବାରେ ସାହାଯ୍ୟ କରେ ଏବଂ ସରକାରୀ ଅଧିକାରୀମାନଙ୍କୁ କୃଷି ଯୋଜନାରେ ସହାୟତା କରେ।">Our platform uses artificial intelligence to forecast crop yields and provide optimization recommendations. It helps farmers make better decisions and supports government officials in agricultural planning.</p>
-                
-                
-                <div class="role-selection animated-role">
-                    <h3 data-en="Choose Your Role" data-hi="अपनी भूमिका चुनें" data-or="ଆପଣଙ୍କର ଭୂମିକା ବାଛନ୍ତୁ">Choose Your Role</h3>
-                    <div class="role-cards">
-                        <div class="role-card farmer-card" onclick="selectRole('farmer')">
-                            <div class="role-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <h4 data-en="I am a Farmer" data-hi="मैं एक किसान हूं" data-or="ମୁଁ ଜଣେ କୃଷକ">I am a Farmer</h4>
-                            <p data-en="Get yield predictions and farming advice" data-hi="फसल उत्पादन भविष्यवाणी और कृषि सलाह प्राप्त करें" data-or="ଫସଲ ଉତ୍ପାଦନ ଭବିଷ୍ୟତବାଣୀ ଏବଂ କୃଷି ପରାମର୍ଶ ପାଆନ୍ତୁ">Get yield predictions and farming advice</p>
-                            <div class="role-arrow">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="role-card govt-card" onclick="selectRole('government')">
-                            <div class="role-icon">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <h4 data-en="I am a Government Officer" data-hi="मैं एक सरकारी अधिकारी हूं" data-or="ମୁଁ ଜଣେ ସରକାରୀ ଅଧିକାରୀ">I am a Government Officer</h4>
-                            <p data-en="Access crop forecasts and district-level reports" data-hi="फसल पूर्वानुमान और जिला स्तरीय रिपोर्ट तक पहुंचें" data-or="ଫସଲ ଭବିଷ୍ୟତବାଣୀ ଏବଂ ଜିଲ୍ଲା ସ୍ତରୀୟ ରିପୋର୍ଟ ପାଆନ୍ତୁ">Access crop forecasts and district-level reports</p>
-                            <div class="role-arrow">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-stats animated-stats">
-                    <div class="stat">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-label" data-en="Prediction Accuracy" data-hi="भविष्यवाणी सटीकता" data-or="ଭବିଷ୍ୟତବାଣୀ ସଠିକତା">Prediction Accuracy</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label" data-en="Active Farmers" data-hi="सक्रिय किसान" data-or="ସକ୍ରିୟ କୃଷକ">Active Farmers</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">15</span>
-                        <span class="stat-label" data-en="Districts Covered" data-hi="कवर किए गए जिले" data-or="ଆବରିତ ଜିଲ୍ଲା">Districts Covered</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-en="How AnnaMitra Works" data-hi="अन्नमित्र कैसे काम करता है" data-or="ଅନ୍ନମିତ୍ର କିପରି କାମ କରେ">How AnnaMitra Works</h2>
-                <p data-en="A simple 3-step process to get accurate crop yield predictions" data-hi="सटीक फसल उत्पादन भविष्यवाणी पाने के लिए एक सरल 3-चरणीय प्रक्रिया" data-or="ସଠିକ ଫସଲ ଉତ୍ପାଦନ ଭବିଷ୍ୟତବାଣୀ ପାଇବା ପାଇଁ ଏକ ସରଳ 3-ପଦ ପ୍ରକ୍ରିୟା">A simple 3-step process to get accurate crop yield predictions</p>
-            </div>
-            
-            <div class="steps-container">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3 data-en="Data Collection" data-hi="डेटा संग्रह" data-or="ଡାଟା ସଂଗ୍ରହ">Data Collection</h3>
-                        <p data-en="We gather historical crop data, weather patterns, soil conditions, and satellite imagery to feed our AI models." data-hi="हम अपने AI मॉडल को खिलाने के लिए ऐतिहासिक फसल डेटा, मौसम पैटर्न, मिट्टी की स्थिति और उपग्रह इमेजरी एकत्र करते हैं।" data-or="ଆମେ ଆମର AI ମଡେଲଗୁଡ଼ିକୁ ଖାଇବା ପାଇଁ historical ଫସଲ ଡାଟା, ମୌସୁମୀ ପ୍ୟାଟର୍ନ, ମାଟିର ସ୍ଥିତି ଏବଂ ସ୍ୟାଟେଲାଇଟ୍ ଇମେଜରୀ ସଂଗ୍ରହ କରୁ।">We gather historical crop data, weather patterns, soil conditions, and satellite imagery to feed our AI models.</p>
-                    </div>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3 data-en="AI Analysis" data-hi="AI विश्लेषण" data-or="AI ବିଶ୍ଳେଷଣ">AI Analysis</h3>
-                        <p data-en="Our advanced machine learning algorithms process the data to identify patterns and predict crop yields with high accuracy." data-hi="हमारे उन्नत मशीन लर्निंग एल्गोरिदम पैटर्न की पहचान करने और उच्च सटीकता के साथ फसल उत्पादन की भविष्यवाणी करने के लिए डेटा को प्रोसेस करते हैं।" data-or="ଆମର ଉନ୍ନତ ମେସିନ୍ ଲର୍ନିଂ ଆଲଗୋରିଦମ୍ ପ୍ୟାଟର୍ନ ଚିହ୍ନିବା ଏବଂ ଉଚ୍ଚ ସଠିକତା ସହିତ ଫସଲ ଉତ୍ପାଦନର ଭବିଷ୍ୟତବାଣୀ କରିବା ପାଇଁ ଡାଟା ପ୍ରକ୍ରିୟାକରଣ କରେ।">Our advanced machine learning algorithms process the data to identify patterns and predict crop yields with high accuracy.</p>
-                    </div>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <div class="step-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3 data-en="Smart Recommendations" data-hi="स्मार्ट सुझाव" data-or="ସ୍ମାର୍ଟ ସୁପାରିଶ">Smart Recommendations</h3>
-                        <p data-en="Get personalized insights and actionable recommendations to optimize your farming practices and maximize crop yields." data-hi="अपनी कृषि प्रथाओं को अनुकूलित करने और फसल उत्पादन को अधिकतम करने के लिए व्यक्तिगत अंतर्दृष्टि और क्रियात्मक सुझाव प्राप्त करें।" data-or="ଆପଣଙ୍କର କୃଷି ଅଭ୍ୟାସକୁ ଅନୁକୂଳିତ କରିବା ଏବଂ ଫସଲ ଉତ୍ପାଦନକୁ ସର୍ବାଧିକ କରିବା ପାଇଁ ବ୍ୟକ୍ତିଗତ ଅନ୍ତର୍ଦୃଷ୍ଟି ଏବଂ କାର୍ଯ୍ୟଯୋଗ୍ୟ ସୁପାରିଶ ପାଆନ୍ତୁ।">Get personalized insights and actionable recommendations to optimize your farming practices and maximize crop yields.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <section id="benefits" class="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-en="Benefits for Farmers & Government" data-hi="किसानों और सरकार के लिए लाभ" data-or="କୃଷକ ଏବଂ ସରକାର ପାଇଁ ଲାଭ">Benefits for Farmers & Government</h2>
-                <p data-en="How AnnaMitra transforms agricultural decision-making for all stakeholders" data-hi="अन्नमित्र सभी हितधारकों के लिए कृषि निर्णय लेने को कैसे बदलता है" data-or="ଅନ୍ନମିତ୍ର ସମସ୍ତ ହିତଧାରୀଙ୍କ ପାଇଁ କୃଷି ନିର୍ଣ୍ଣୟ ନେବା କିପରି ପରିବର୍ତ୍ତନ କରେ">How AnnaMitra transforms agricultural decision-making for all stakeholders</p>
-            </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card farmer-benefits">
-                    <div class="benefit-header">
-                        <div class="benefit-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h3 data-en="For Farmers" data-hi="किसानों के लिए" data-or="କୃଷକମାନଙ୍କ ପାଇଁ">For Farmers</h3>
-                    </div>
-                    <div class="benefit-list">
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Accurate yield predictions for better planning" data-hi="बेहतर योजना के लिए सटीक उत्पादन भविष्यवाणी" data-or="ଉନ୍ନତ ଯୋଜନା ପାଇଁ ସଠିକ ଉତ୍ପାଦନ ଭବିଷ୍ୟତବାଣୀ">Accurate yield predictions for better planning</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Personalized farming recommendations" data-hi="व्यक्तिगत कृषि सुझाव" data-or="ବ୍ୟକ୍ତିଗତ କୃଷି ସୁପାରିଶ">Personalized farming recommendations</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Risk assessment and mitigation strategies" data-hi="जोखिम मूल्यांकन और शमन रणनीतियां" data-or="ବିପଦ ମୂଲ୍ୟାଙ୍କନ ଏବଂ ନିରାକରଣ ରଣନୀତି">Risk assessment and mitigation strategies</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Resource optimization guidance" data-hi="संसाधन अनुकूलन मार्गदर्शन" data-or="ସମ୍ବଳ ଅନୁକୂଳନ ମାର୍ଗଦର୍ଶନ">Resource optimization guidance</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="benefit-card govt-benefits">
-                    <div class="benefit-header">
-                        <div class="benefit-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 data-en="For Government" data-hi="सरकार के लिए" data-or="ସରକାର ପାଇଁ">For Government</h3>
-                    </div>
-                    <div class="benefit-list">
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="District and state-level yield forecasting" data-hi="जिला और राज्य स्तरीय उत्पादन पूर्वानुमान" data-or="ଜିଲ୍ଲା ଏବଂ ରାଜ୍ୟ ସ୍ତରୀୟ ଉତ୍ପାଦନ ଭବିଷ୍ୟତବାଣୀ">District and state-level yield forecasting</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Food security planning and management" data-hi="खाद्य सुरक्षा योजना और प्रबंधन" data-or="ଖାଦ୍ୟ ସୁରକ୍ଷା ଯୋଜନା ଏବଂ ପରିଚାଳନା">Food security planning and management</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Policy decision support tools" data-hi="नीति निर्णय सहायता उपकरण" data-or="ନୀତି ନିର୍ଣ୍ଣୟ ସହାୟତା ଉପକରଣ">Policy decision support tools</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Disaster preparedness and response" data-hi="आपदा तैयारी और प्रतिक्रिया" data-or="ବିପଦ ପ୍ରସ୍ତୁତି ଏବଂ ପ୍ରତିକ୍ରିୟା">Disaster preparedness and response</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <section class="stakeholders">
-        <div class="container">
-            <div class="section-header">
-                <h2>Built for All Agricultural Stakeholders</h2>
-                <p>Our platform serves the diverse needs of farmers, government agencies, and agricultural organizations</p>
-            </div>
-            
-            <div class="stakeholders-grid">
-                <div class="stakeholder-card">
-                    <div class="stakeholder-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>For Farmers</h3>
-                    <ul>
-                        <li>Accurate yield predictions for better planning</li>
-                        <li>Personalized farming recommendations</li>
-                        <li>Risk assessment and mitigation strategies</li>
-                        <li>Market price forecasting</li>
-                        <li>Resource optimization guidance</li>
-                    </ul>
-                </div>
-                
-                <div class="stakeholder-card">
-                    <div class="stakeholder-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>For Government</h3>
-                    <ul>
-                        <li>District and state-level yield forecasting</li>
-                        <li>Food security planning and management</li>
-                        <li>Policy decision support tools</li>
-                        <li>Disaster preparedness and response</li>
-                        <li>Resource allocation optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="stakeholder-card">
-                    <div class="stakeholder-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>For Agri-Organizations</h3>
-                    <ul>
-                        <li>Supply chain planning and optimization</li>
-                        <li>Insurance risk assessment</li>
-                        <li>Research and development insights</li>
-                        <li>Extension service support</li>
-                        <li>Training and capacity building</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Agriculture?</h2>
-                <p>Join hundreds of farmers and organizations already using our AI platform to improve their agricultural outcomes.</p>
-                <button class="btn-primary btn-large" onclick="openSignInModal()">
-                    <i class="fas fa-rocket"></i>
-                    Start Your Free Trial
-                </button>
-            </div>
-        </div>
-    </section>
-
-    
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-en="Need Help?" data-hi="मदद चाहिए?" data-or="ସାହାଯ୍ୟ ଦରକାର?">Need Help?</h2>
-                <p data-en="Get in touch with our support team for any questions or assistance" data-hi="किसी भी प्रश्न या सहायता के लिए हमारी सहायता टीम से संपर्क करें" data-or="କୌଣସି ପ୍ରଶ୍ନ ବା ସାହାଯ୍ୟ ପାଇଁ ଆମର ସହାୟତା ଦଳ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ">Get in touch with our support team for any questions or assistance</p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 data-en="Email Support" data-hi="ईमेल सहायता" data-or="ଇମେଲ୍ ସହାୟତା">Email Support</h4>
-                            <p>info@annamitra.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 data-en="Phone Support" data-hi="फोन सहायता" data-or="ଫୋନ୍ ସହାୟତା">Phone Support</h4>
-                            <p>+91 98765 43210</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 data-en="Location" data-hi="स्थान" data-or="ଅବସ୍ଥାନ">Location</h4>
-                            <p data-en="Odisha, India" data-hi="ओडिशा, भारत" data-or="ଓଡ଼ିଶା, ଭାରତ">Odisha, India</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form class="support-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="subject" name="subject" required>
-                                <option value="" data-en="Select Subject" data-hi="विषय चुनें" data-or="ବିଷୟ ବାଛନ୍ତୁ">Select Subject</option>
-                                <option value="general" data-en="General Inquiry" data-hi="सामान्य पूछताछ" data-or="ସାଧାରଣ ପ୍ରଶ୍ନ">General Inquiry</option>
-                                <option value="technical" data-en="Technical Support" data-hi="तकनीकी सहायता" data-or="ଟେକନିକାଲ୍ ସହାୟତା">Technical Support</option>
-                                <option value="partnership" data-en="Partnership" data-hi="साझेदारी" data-or="ସାଝେଦାରୀ">Partnership</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i>
-                            <span data-en="Send Message" data-hi="संदेश भेजें" data-or="ବାର୍ତ୍ତା ପଠାନ୍ତୁ">Send Message</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-seedling"></i>
-                        </div>
-                        <div class="logo-text">
-                            <span class="logo-name">AnnaMitra</span>
-                            <span class="logo-tagline">अन्नमित्र</span>
-                        </div>
-                    </div>
-                    <p data-en="Empowering agriculture with AI-driven insights for better yields and sustainable farming practices." data-hi="बेहतर उत्पादन और सतत कृषि प्रथाओं के लिए AI-संचालित अंतर्दृष्टि के साथ कृषि को सशक्त बनाना।" data-or="ଉନ୍ନତ ଉତ୍ପାଦନ ଏବଂ ସ୍ଥାୟୀ କୃଷି ଅଭ୍ୟାସ ପାଇଁ AI-ଚାଳିତ ଅନ୍ତର୍ଦୃଷ୍ଟି ସହିତ କୃଷିକୁ ସଶକ୍ତ କରିବା।">Empowering agriculture with AI-driven insights for better yields and sustainable farming practices.</p>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Quick Links" data-hi="त्वरित लिंक" data-or="ଦ୍ରୁତ ଲିଙ୍କ୍">Quick Links</h4>
-                    <ul>
-                        <li><a href="#how-it-works" data-en="How it Works" data-hi="यह कैसे काम करता है" data-or="ଏହା କିପରି କାମ କରେ">How it Works</a></li>
-                        <li><a href="#benefits" data-en="Benefits" data-hi="लाभ" data-or="ଲାଭ">Benefits</a></li>
-                        <li><a href="#contact" data-en="Contact" data-hi="संपर्क" data-or="ଯୋଗାଯୋଗ">Contact</a></li>
-                        <li><a href="#" data-en="Privacy Policy" data-hi="गोपनीयता नीति" data-or="ଗୋପନୀୟତା ନୀତି">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Support" data-hi="सहायता" data-or="ସହାୟତା">Support</h4>
-                    <ul>
-                        <li><a href="#" data-en="Help Center" data-hi="सहायता केंद्र" data-or="ସହାୟତା କେନ୍ଦ୍ର">Help Center</a></li>
-                        <li><a href="#" data-en="Documentation" data-hi="दस्तावेज" data-or="ଦସ୍ତାବେଜ">Documentation</a></li>
-                        <li><a href="#" data-en="API Reference" data-hi="API संदर्भ" data-or="API ସନ୍ଦର୍ଭ">API Reference</a></li>
-                        <li><a href="#" data-en="Community" data-hi="समुदाय" data-or="ସମୁଦାୟ">Community</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Contact Info" data-hi="संपर्क जानकारी" data-or="ଯୋଗାଯୋଗ ସୂଚନା">Contact Info</h4>
-                    <p><i class="fas fa-envelope"></i> info@annamitra.com</p>
-                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                    <p><i class="fas fa-map-marker-alt"></i> <span data-en="Odisha, India" data-hi="ओडिशा, भारत" data-or="ଓଡ଼ିଶା, ଭାରତ">Odisha, India</span></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 AnnaMitra. All rights reserved. | SIH Hackathon Project - Problem Statement 25044</p>
-            </div>
-        </div>
-    </footer>
-
-    
-    <div id="signInModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Sign In to CropYield AI</h2>
-                <span class="close" onclick="closeSignInModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form class="signin-form">
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="form-options">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="remember">
-                            <span class="checkmark"></span>
-                            Remember me
-                        </label>
-                        <a href="#" class="forgot-password">Forgot Password?</a>
-                    </div>
-                    <button type="submit" class="btn-primary btn-full">Sign In</button>
-                    <div class="signup-link">
-                        <p>Don't have an account? <a href="#" onclick="showSignUp()">Sign up here</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
+  <header>
+    <div class="brand">
+      <div class="logo">TN</div>
+      <div>
+        <div class="title">TerraNova</div>
+        <div class="kicker">AI Crop Yield Predictor & Advisory</div>
+      </div>
     </div>
+    <nav class="nav">
+      <a href="#about" class="btn" data-i18n="nav.about">About</a>
+      <a href="#features" class="btn" data-i18n="nav.features">Features</a>
+      
+      <a href="#contact" class="btn" data-i18n="nav.contact">Contact</a>
+      <a href="dashboard.html" class="btn" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="#form" class="btn primary" id="cta" data-i18n="nav.cta">Get Advisory</a>
+      <select id="langSelect" class="btn" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+      <label class="theme-toggle">
+        <input type="checkbox" id="themeToggle" aria-label="Toggle light/dark theme" />
+        <span class="slider"></span>
+      </label>
+    </nav>
+  </header>
 
-    <script src="script.js"></script>
+  <div class="container">
+    <section class="hero" id="about">
+      <div>
+        <div class="chip" data-i18n="hero.chip">🌾 Farmer-friendly • Offline-first</div>
+        <h1 class="fade-up" data-i18n="hero.title">Predict crop yield with localized AI advice.</h1>
+        <p class="muted" data-i18n="hero.desc">TerraNova combines satellite data, historical yields and local weather to give tailored predictions and simple actions farmers can take to improve yield — fertilizer timing, irrigation advice, and pest alerts.</p>
+
+        <div class="features" id="features">
+          <div class="feature">
+            <h3 data-i18n="features.f1.title">Accurate forecasts</h3>
+            <p class="muted" data-i18n="features.f1.desc">Short- and long-term yield estimates with confidence bands and simple recommendations.</p>
+          </div>
+          <div class="feature">
+            <h3 data-i18n="features.f2.title">Actionable advisory</h3>
+            <p class="muted" data-i18n="features.f2.desc">Step-by-step guidance tuned for crop, stage, and local conditions.</p>
+          </div>
+          <div class="feature">
+            <h3 data-i18n="features.f3.title">Offline support</h3>
+            <p class="muted" data-i18n="features.f3.desc">Download advisories and use basic features without continuous internet.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:18px;align-items:center">
+          <div class="card" style="display:flex;gap:14px;align-items:center">
+            <div>
+              <div class="stat">+92%</div>
+              <div class="muted">Model accuracy (avg)*</div>
+            </div>
+            <div style="border-left:1px solid rgba(255,255,255,0.03);height:48px;width:12px"></div>
+            <div>
+              <div class="stat">150K</div>
+              <div class="muted">Farmers supported</div>
+            </div>
+          </div>
+          <button class="btn primary" id="demoBtn" data-i18n="hero.demo">Try Demo</button>
+        </div>
+      </div>
+
+      
+
+    
+    
+  </div>
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
