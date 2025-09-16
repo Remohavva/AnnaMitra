@@ -60,6 +60,23 @@ function renderHistory(){
     <tbody>${rows || ''}</tbody>`;
 }
 
+function renderFarmer(){
+  const info = readJson('am_farmer', { name:'', village:'', acres:'' });
+  const sum = document.getElementById('farmerSummary');
+  if(sum){
+    const name = info.name || '-';
+    const village = info.village || '-';
+    const acres = info.acres ? info.acres + ' acres' : '-';
+    sum.innerHTML = `<div class="chip">${name}</div> <div class="chip">${village}</div> <div class="chip">${acres}</div>`;
+  }
+  const nameEl = document.getElementById('farmerName');
+  const villageEl = document.getElementById('farmerVillage');
+  const acresEl = document.getElementById('farmerAcres');
+  if(nameEl) nameEl.value = info.name || '';
+  if(villageEl) villageEl.value = info.village || '';
+  if(acresEl) acresEl.value = info.acres || '';
+}
+
 function renderResources(){
   const table = document.getElementById('resourceTable');
   const chips = document.getElementById('resourceChips');
@@ -116,6 +133,7 @@ document.getElementById('clearHistory').addEventListener('click', ()=>{
 
 renderResources();
 renderHistory();
+renderFarmer();
 
 // Seed button (dashboard)
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -125,6 +143,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
       window.Seed.seedDemoData({ historyCount: 30, resourceCount: 8 });
       renderResources();
       renderHistory();
+    });
+  }
+  const farmerForm = document.getElementById('farmerForm');
+  if(farmerForm){
+    farmerForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('farmerName').value.trim();
+      const village = document.getElementById('farmerVillage').value.trim();
+      const acres = document.getElementById('farmerAcres').value.trim();
+      writeJson('am_farmer', { name, village, acres });
+      renderFarmer();
     });
   }
 });

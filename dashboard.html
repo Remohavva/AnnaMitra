@@ -35,6 +35,20 @@
   </header>
 
   <div class="container">
+    <section class="card" style="margin-top:20px" id="farmerInfo">
+      <h3 style="margin:0 0 8px">Farmer Details</h3>
+      <div class="muted">Store farmer name, village, and acreage.</div>
+      <form id="farmerForm" class="card" style="margin-top:12px" autocomplete="off">
+        <div class="form-group">
+          <input id="farmerName" placeholder="Farmer name" required />
+          <input id="farmerVillage" placeholder="Village" required />
+          <input id="farmerAcres" placeholder="Acres" inputmode="decimal" />
+          <button class="btn primary" type="submit">Save</button>
+        </div>
+      </form>
+      <div id="farmerSummary" style="margin-top:8px"></div>
+    </section>
+
     <section class="card" style="margin-top:20px">
       <h3 style="margin:0 0 8px" data-i18n="dash.resources">Your Resources</h3>
       <div id="resourceChips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
